@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>İşlem</title>
+  </head>
+  <body>
+    <div class="seperator">
+      <p>Alt Sınır:</p>
+      <input
+        type="text"
+        id="input1"
+        class="standart-text"
+        placeholder="Alt Sınır"
+      />
+    </div>
+    <div class="seperator">
+      <p>Üst Sınır:</p>
+      <input
+        type="text"
+        class="standart-text"
+        id="input2"
+        placeholder="Üst Sınır"
+      />
+    </div>
+    <div class="seperator">
+      <p>Miktar:</p>
+      <input
+        type="text"
+        class="standart-text"
+        id="miktar"
+        placeholder="Miktar"
+      />
+    </div>
+
+    <button id="generate" onclick="generateNumbers();">Oluştur</button>
+    <div id="numbers-div"></div>
+    <script>
+      const numbersDiv = document.getElementById("numbers-div");
+      const input1 = document.getElementById("input1");
+      const input2 = document.getElementById("input2");
+      const miktar = document.getElementById("miktar");
+
+      let numbers = [{ sayi: 1 }, { sayi: 2 }, { sayi: 3 }];
+      function generateNumbers() {
+        numbersDiv.innerHTML = null;
+        for (let i = 0; i < miktar.value; i++) {
+          let min = Math.ceil(input1.value);
+          let max = Math.floor(input2.value);
+          let random1 = Math.floor(Math.random() * (max - min + 1)) + min;
+          let random2 = Math.floor(Math.random() * (max - min + 1)) + min;
+          let element = document.createElement("p");
+          let toplamaCikarma = Math.random() < 0.5;
+          console.log(toplamaCikarma);
+          if (toplamaCikarma == true) {
+            element.innerText =
+              i +
+              1 +
+              ") " +
+              random1 +
+              " - " +
+              random2 +
+              " = " +
+              (random1 - random2);
+            element.style.color = "red";
+          } else {
+            element.innerText =
+              i +
+              1 +
+              ") " +
+              random1 +
+              " + " +
+              random2 +
+              " = " +
+              (random1 + random2);
+            element.style.color = "green";
+          }
+          numbersDiv.appendChild(element);
+        }
+      }
+      /*function createRandom() {
+        let min = Math.ceil(input1);
+        let max = Math.floor(input2);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }*/
+    </script>
+  </body>
+</html>

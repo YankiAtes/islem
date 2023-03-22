@@ -1,0 +1,40 @@
+div {
+    font-family: arial;
+    font-weight: bold;
+  }
+  input {
+    margin: 0;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 150px;
+  }
+  .seperator {
+    display: block;
+    width: 150px;
+  }
+.standart-text{
+  display: block;
+}
+  #generate {
+    margin: 0;
+    width: 150px;
+    padding: 0;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    color: black;
+    background-color: aqua;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 20px;
+    transition: opacity 0.2s;
+    display: block;
+  }
+  #generate:hover {
+    opacity: 0.6;
+  }
+
+  @media screen and (max-width: 328px){
+    #generate{
+        margin-top: 25px;
+    }
+  }

@@ -10,30 +10,15 @@
   <body>
     <div class="seperator">
       <p>Alt Sınır:</p>
-      <input
-        type="text"
-        id="input1"
-        class="standart-text"
-        placeholder="Alt Sınır"
-      />
+      <input type="text" id="input1" placeholder="Alt Sınır" />
     </div>
     <div class="seperator">
       <p>Üst Sınır:</p>
-      <input
-        type="text"
-        class="standart-text"
-        id="input2"
-        placeholder="Üst Sınır"
-      />
+      <input type="text" id="input2" placeholder="Üst Sınır" />
     </div>
     <div class="seperator">
       <p>Miktar:</p>
-      <input
-        type="text"
-        class="standart-text"
-        id="miktar"
-        placeholder="Miktar"
-      />
+      <input type="text" id="miktar" placeholder="Miktar" />
     </div>
 
     <button id="generate" onclick="generateNumbers();">Oluştur</button>
@@ -46,13 +31,14 @@
 
       let numbers = [{ sayi: 1 }, { sayi: 2 }, { sayi: 3 }];
       function generateNumbers() {
-        numbersDiv.innerHTML = null;
+        numbersDiv.innerText = null;
         for (let i = 0; i < miktar.value; i++) {
           let min = Math.ceil(input1.value);
           let max = Math.floor(input2.value);
           let random1 = Math.floor(Math.random() * (max - min + 1)) + min;
           let random2 = Math.floor(Math.random() * (max - min + 1)) + min;
           let element = document.createElement("p");
+
           let toplamaCikarma = Math.random() < 0.5;
           console.log(toplamaCikarma);
           if (toplamaCikarma == true) {
@@ -78,6 +64,7 @@
               (random1 + random2);
             element.style.color = "green";
           }
+          element.classList.add("generated-text");
           numbersDiv.appendChild(element);
         }
       }

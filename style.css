@@ -1,40 +1,59 @@
-div {
+div{
     font-family: arial;
     font-weight: bold;
+    margin: auto;
+  }
+  #numbers-div{
+    margin: auto;
+    margin-top: 20px;
   }
   input {
     margin: 0;
-    margin-top: 1vh;
     margin-bottom: 1vh;
-    width: 150px;
+    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
   }
   .seperator {
     display: block;
-    width: 150px;
+    width: 200px;
   }
 .standart-text{
   display: block;
 }
+.generated-text{
+  margin: auto;
+  width: max-content;
+}
   #generate {
     margin: 0;
-    width: 150px;
+    width: 200px;
     padding: 0;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding-top: 1.4vh;
+    padding-bottom: 1.4vh;
     color: black;
     background-color: aqua;
     border-width: 1px;
     border-style: solid;
     border-radius: 20px;
-    transition: opacity 0.2s;
+    border: none;
+    box-shadow: 0px 0px 18px black;
     display: block;
+    margin: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
   }
   #generate:hover {
-    opacity: 0.6;
+    box-shadow: 6px 6px 18px rgba(0, 0, 0, 128)
   }
 
   @media screen and (max-width: 328px){
     #generate{
-        margin-top: 25px;
+        margin-top: 30px;
+    }
+    #generate:hover{
+      box-shadow: 0px 0px 18px black;
     }
   }
